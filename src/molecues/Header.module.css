@@ -1,0 +1,13 @@
+.header{
+    background-color: #B8A89E;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+

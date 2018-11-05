@@ -1,0 +1,12 @@
+.cardList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    margin: 15px;
+}
+
+h3{
+    font-weight: lighter;
+    text-align: center;
+}

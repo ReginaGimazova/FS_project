@@ -1,0 +1,13 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Button.module.css';
+
+const Button = (props) => (
+  <button onClick={props.handleClick} className={styles.btn}>{props.children}</button>
+);
+
+Button.propTypes = {
+  color: PropTypes.string
+};
+
+export default Button;
