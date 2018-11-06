@@ -16,9 +16,9 @@ class Card extends Component{
             <div className={styles.card}>
                 <div className={styles.head}>
                     <h4>{this.props.title}</h4>
-                    <button className={styles.btn} onClick={this.handleClick}>
+                    <Button onclick={this.handleClick}>
                         {this.state.isShown === false ? "open" : "close" }
-                    </button>
+                    </Button>
                 </div>
                 {this.state.isShown && <p>{this.props.text}</p>}
             </div>

@@ -6,13 +6,15 @@ class Link extends Component{
     render(){
         const children = this.props.children;
         return (
-            <a className={styles.link} href={this.props.href}>{children}</a>
+            <a style={{color: this.props.color, margin: this.props.margin}} className={styles.link} href={this.props.href}>{children}</a>
         )
     }
 }
 Link.propTypes = {
     href: PropTypes.string,
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
+    color: PropTypes.string,
+    margin: PropTypes.string
 };
 
 export default Link;
