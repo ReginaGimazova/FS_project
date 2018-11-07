@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import styles from './HomePage.module.css';
+import React from 'react';
 import MainTemplate from '../templates/MainTemplate'
+import styles from './HomePage.module.css';
+import articles from '../data/articles'
 
-class HomePage extends Component{
-    render(){
-        return(
-            <div className={styles.page}>
-                <MainTemplate/>
-            </div>
-        )
-    }
-}
+const HomePage = () => (
+    <div className={styles.page}>
+        <MainTemplate>{articles}</MainTemplate>
+    </div>
+);
+
 export default HomePage;
