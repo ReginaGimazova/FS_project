@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Link.module.css';
 
 const Link = (props) => (
-    <a style={props.style} className={styles.link} href={props.href}>{props.children}</a>
+    <a className={[styles.link, styles[props.className]].join(' ')} href={props.href}>{props.children}</a>
 );
 
 Link.propTypes = {
