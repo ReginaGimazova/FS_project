@@ -5,10 +5,10 @@ import styles from './Header.module.css';
 
 const Header = () => (
     <header className={styles.header}>
-        <div className={styles.menu}>
+        <nav className={styles.menu}>
             <Link href={'/home'}>Home</Link>
             <Link href={'/about'}>About</Link>
-        </div>
+        </nav>
         <Button>LOGIN</Button>
     </header>
 );

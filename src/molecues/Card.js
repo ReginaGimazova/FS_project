@@ -13,7 +13,7 @@ class Card extends Component{
 
     render(){
         return(
-            <div className={styles.card}>
+            <section className={styles.card}>
                 <div className={styles.head}>
                     <h4>{this.props.title}</h4>
                     <Button onclick={this.handleClick}>
@@ -21,7 +21,7 @@ class Card extends Component{
                     </Button>
                 </div>
                 {this.state.isShown && <p>{this.props.text}</p>}
-            </div>
+            </section>
         )
     }
 }

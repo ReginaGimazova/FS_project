@@ -3,9 +3,9 @@ import style from './RightMenu.module.css'
 import Block from '../atoms/Block'
 
 const RightMenu = () => (
-    <div className={style.rightMenu}>
+    <aside className={style.rightMenu}>
         <Block/>
-    </div>
+    </aside>
 );
 
 export default RightMenu

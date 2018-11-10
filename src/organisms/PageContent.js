@@ -2,14 +2,15 @@ import React from 'react';
 import CardList from './CardList';
 import LeftMenu from './LeftMenu';
 import RightMenu from './RightMenu'
-import styles from './MenuContent.module.css';
+import styles from './PageContent.module.css';
 import links from '../data/label'
+import articles from '../data/articles'
 
-const MenuContent = ({children}) => (
+const PageContent = () => (
     <div className={styles.content}>
         <LeftMenu leftMenuContent = {links}/>
-        <CardList>{children}</CardList>
+        <CardList>{articles}</CardList>
         <RightMenu />
     </div>
 );
-export default MenuContent;
+export default PageContent;

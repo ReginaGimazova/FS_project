@@ -1,12 +1,11 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate'
-import styles from './HomePage.module.css';
-import articles from '../data/articles'
+import PageContent from '../organisms/PageContent'
 
 const HomePage = () => (
-    <div className={styles.page}>
-        <MainTemplate>{articles}</MainTemplate>
-    </div>
+    <MainTemplate>
+        <PageContent/>
+    </MainTemplate>
 );
 
 export default HomePage;

@@ -2,16 +2,11 @@ import React from 'react';
 import styles from './LeftMenu.module.css';
 import Link from '../atoms/Link';
 
-const style = {
-    color: 'black',
-    margin: '20px'
-};
-
 const LeftMenu = (props) => (
-    <div className={styles.leftMenu}>
+    <aside className={styles.leftMenu}>
         {props.leftMenuContent.map(content => {
-            return ( <Link style = {style} {...content}>{content.label}</Link>)
+            return ( <Link className = 'leftMenuLink' {...content}>{content.label}</Link>)
         })}
-    </div>
+    </aside>
 );
 export default LeftMenu

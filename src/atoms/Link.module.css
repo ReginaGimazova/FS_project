@@ -1,5 +1,9 @@
-.link{
+.link {
     text-decoration: none;
     color: white;
     font-size: 16px;
+}
+.leftMenuLink{
+    color: black !important;
+    margin: 20px
 }
