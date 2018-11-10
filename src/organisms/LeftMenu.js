@@ -9,4 +9,5 @@ const LeftMenu = (props) => (
         })}
     </aside>
 );
+
 export default LeftMenu

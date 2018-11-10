@@ -10,4 +10,6 @@ Link.propTypes = {
     href: PropTypes.string,
     children: PropTypes.element.isRequired,
 };
+
 export default Link;
+

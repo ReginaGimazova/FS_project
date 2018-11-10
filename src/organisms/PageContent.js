@@ -13,4 +13,5 @@ const PageContent = () => (
         <RightMenu />
     </div>
 );
+
 export default PageContent;
