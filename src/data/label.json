@@ -1,26 +1,11 @@
 [
   {
-    "label": "MY PAGE",
-    "href": "/mypage"
+    "label": "PROFILE",
+    "href": "/profile"
   },
 
   {
     "label": "NEWS",
     "href": "/news"
-  },
-
-  {
-    "label": "MESSAGES",
-    "href": "/messages"
-  },
-
-  {
-    "label": "FRIENDS",
-    "href": "/friends"
-  },
-
-  {
-    "label": "GAMES",
-    "href": "/games"
   }
 ]

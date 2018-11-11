@@ -1,0 +1,16 @@
+.errorSection{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.errorSection > h1{
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+.errorSection > h2{
+    font-size: 2em;
+    font-weight: lighter;
+}
