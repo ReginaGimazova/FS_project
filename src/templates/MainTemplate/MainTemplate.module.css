@@ -4,3 +4,10 @@
     min-height: inherit;
     flex-direction: column;
 }
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    flex-direction: row;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
-import Button from '../atoms/Button';
-import Link from '../atoms/Link';
+import Button from '../../atoms/Button';
+import MenuLink from '../../atoms/MenuLink'
 import styles from './Header.module.css';
 
 const Header = () => (
     <header className={styles.header}>
         <nav className={styles.menu}>
-            <Link href={'/home'}>Home</Link>
-            <Link href={'/about'}>About</Link>
+            <MenuLink href={'/'}>Home</MenuLink>
+            <MenuLink href={'/info'}>About</MenuLink>
         </nav>
-        <Button>LOGIN</Button>
+        <Button>LOGOUT</Button>
     </header>
 );
 
 export default Header
+

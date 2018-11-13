@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Card.module.css';
-import Button from '../atoms/Button';
+import Button from '../../atoms/Button';
 
 class Card extends Component{
     state = {

@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './LeftMenu.module.css';
-import Link from '../atoms/Link';
+import MenuLink from '../../atoms/MenuLink';
 
 const LeftMenu = (props) => (
     <aside className={styles.leftMenu}>
         {props.leftMenuContent.map(content => {
-            return ( <Link className = 'leftMenuLink' {...content}>{content.label}</Link>)
+            return ( <MenuLink className = 'leftMenuLink' {...content}>{content.label}</MenuLink>)
         })}
     </aside>
 );
