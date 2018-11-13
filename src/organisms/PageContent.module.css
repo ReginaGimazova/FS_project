@@ -1,7 +1,0 @@
-.content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex: 1;
-    margin-top: 20px;
-}

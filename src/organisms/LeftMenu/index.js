@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LeftMenu.module.css';
-import MenuLink from '../atoms/MenuLink';
+import MenuLink from '../../atoms/MenuLink';
 
 const LeftMenu = (props) => (
     <aside className={styles.leftMenu}>

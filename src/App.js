@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import NewsPage from './pages/NewsPage.js'
+import NewsPage from './pages/NewsPage'
 import HomePage from './pages/HomePage'
 import InfoPage from './pages/InfoPage'
 import ProfilePage from './pages/ProfilePage'
 import ErrorPage from './pages/ErrorPage'
+import RegistrationPage from './pages/RegistrationPage'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
                 <Route path='/news' component={NewsPage} exact/>
                 <Route path='/info' component={InfoPage} exact/>
                 <Route path='/profile' component={ProfilePage} exact/>
+                <Route path='/registration' component={RegistrationPage} exact/>
                 <Route component={ErrorPage} exact/>
             </Switch>
         </BrowserRouter>

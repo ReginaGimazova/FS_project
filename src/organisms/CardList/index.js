@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../molecues/Card';
+import Card from '../../molecues/Card/index';
 import styles from './CardList.module.css';
 
 const CardList = ({children}) => (
