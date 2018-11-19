@@ -1,5 +1,6 @@
 .footer{
     display: flex;
-    background-color: #B8A89E;
+    background-color: black;
     padding: 20px;
+    justify-self: flex-end;
 }

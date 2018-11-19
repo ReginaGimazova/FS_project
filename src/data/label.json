@@ -1,11 +1,16 @@
 [
   {
-    "label": "PROFILE",
+    "label": "Profile",
     "href": "/profile"
   },
 
   {
-    "label": "NEWS",
+    "label": "News",
     "href": "/news"
+  },
+
+  {
+    "label": "Marvel",
+    "href": "/marvel"
   }
 ]

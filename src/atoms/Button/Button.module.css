@@ -2,6 +2,9 @@
     background-color: black;
     color: white;
     border-color: black;
-    padding: 4px;
+    padding: 4px 6px;
     max-height: 30px;
+    min-width: 100px;
+    font-family: "Arial", monospace;
+    font-size: 14px;
 }
