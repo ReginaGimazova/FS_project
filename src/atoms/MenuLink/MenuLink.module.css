@@ -1,7 +1,10 @@
 .link {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-family: "Arial", monospace;
 }
 .leftMenuLink{
     color: black !important;

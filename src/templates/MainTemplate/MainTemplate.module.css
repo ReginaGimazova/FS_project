@@ -1,13 +1,14 @@
 .template{
     display: flex;
-    justify-content: space-between;
     min-height: inherit;
     flex-direction: column;
+    min-height: inherit;
 }
 
 .container{
     display: flex;
     justify-content: space-around;
-    margin: 50px;
+    margin: 20px;
+    min-height: inherit;
     flex-direction: row;
 }
