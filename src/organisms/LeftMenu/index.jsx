@@ -5,7 +5,7 @@ import MenuLink from '../../atoms/MenuLink';
 
 const LeftMenu = props => (
   <aside className={styles.leftMenu}>
-    {props.leftMenuContent.map(content => (<MenuLink className="leftMenuLink" {...content}>{content.label}</MenuLink>))}
+    {props.leftMenuContent.map(content => (<MenuLink className="blackLink" {...content}>{content.label}</MenuLink>))}
   </aside>
 );
 

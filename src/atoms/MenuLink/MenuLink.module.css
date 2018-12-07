@@ -6,7 +6,11 @@
     text-transform: uppercase;
     font-family: "Arial", monospace;
 }
-.leftMenuLink{
+.blackLink{
     color: black !important;
     margin: 20px
+}
+
+.centralizedLink{
+    align-self: center;
 }
