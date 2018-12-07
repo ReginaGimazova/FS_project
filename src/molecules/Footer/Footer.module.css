@@ -1,0 +1,6 @@
+.footer{
+    display: flex;
+    background-color: black;
+    padding: 20px;
+    justify-self: flex-end;
+}

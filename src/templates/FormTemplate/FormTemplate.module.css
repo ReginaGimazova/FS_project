@@ -1,0 +1,8 @@
+.formTemplate{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    min-height: inherit;
+    background: url("https://i.annihil.us/u/prod/marvel/html_blocks_assets/loyalty/reg-bg.jpg") top center no-repeat black;
+}
