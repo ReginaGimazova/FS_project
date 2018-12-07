@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 import styles from './MenuLink.module.css';
 
 const MenuLink = props => (
-  <Link to={props.href} className={classNames(styles.link, {[styles.leftMenuLink]: props.className})}>{props.children}</Link>
+  <Link
+    to={props.href}
+    className={classNames(styles.link, { [styles.blackLink]: props.className })}
+  >
+    {props.children}
+  </Link>
 );
 
 MenuLink.propTypes = {

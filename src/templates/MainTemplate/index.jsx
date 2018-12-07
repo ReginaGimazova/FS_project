@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../../molecues/Header';
-import Footer from '../../molecues/Footer';
+import Header from '../../molecules/Header';
+import Footer from '../../molecules/Footer';
 import LeftMenu from '../../organisms/LeftMenu';
 import links from '../../data/label';
 import styles from './MainTemplate.module.css';
@@ -9,7 +9,7 @@ import styles from './MainTemplate.module.css';
 const MainTemplate = ({ children }) => (
   <div className={styles.template}>
     <Header />
-    <div className={styles.container}>
+    <div className={styles.rowContainer}>
       <LeftMenu leftMenuContent={links} />
       {children}
     </div>

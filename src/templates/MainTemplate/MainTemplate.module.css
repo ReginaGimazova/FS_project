@@ -2,13 +2,19 @@
     display: flex;
     min-height: inherit;
     flex-direction: column;
-    min-height: inherit;
 }
 
-.container{
+.rowContainer{
     display: flex;
     justify-content: space-around;
     margin: 20px;
     min-height: inherit;
     flex-direction: row;
+}
+
+.colContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-direction: column;
 }

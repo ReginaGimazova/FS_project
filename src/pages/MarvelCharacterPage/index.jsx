@@ -8,7 +8,7 @@ class MarvelCharacterPage extends Component {
   state = {
     loading: false,
     error: false,
-    data: [],
+    data: null,
   };
 
   id = this.props.match.params.id;
@@ -23,19 +23,19 @@ class MarvelCharacterPage extends Component {
     this.setState({
       loading: true,
       error: false,
-      data: [],
+      data: null,
     });
     axios
-      .get('https://gateway.marvel.com/v1/public/characters/'.concat(this.id), {
+      .get(`${process.env.REACT_APP_MARVEL_PATH}/v1/public/characters/${this.id}`, {
         params: {
-          apikey: '5f9ed6e9a5e59cae437f518290e52570',
+          apikey: process.env.REACT_APP_MARVEL_API_KEY,
         },
       })
       .then((response) => {
         this.setState({
           loading: false,
-          eror: false,
-          data: response.data.data.results,
+          error: false,
+          data: response.data.data.results[0],
         });
       })
       .catch(() => {
@@ -52,19 +52,21 @@ class MarvelCharacterPage extends Component {
         <CommonContent>
           <Title>Marvel character</Title>
           {this.state.loading && 'loading'}
-          {!this.state.loading && !this.state.error && this.state.data.length === 0 && 'Empty'}
-          {this.state.eror && (
+          {!this.state.loading && !this.state.error && this.state.data === null && 'Empty'}
+          {this.state.error && (
             <div>
               <p>error</p>
               <button type="button" onClick={this.fetch}>reload</button>
             </div>
           )}
-          {this.state.data.map(character => (
-            <div key={character.id}>
-              <Title>{character.name}</Title>
-              <p>{character.description}</p>
-            </div>
-          ))}
+          {this.state.data !== null
+          && (
+          <div key={this.state.data.id}>
+            <Title>{this.state.data.name}</Title>
+            <p>{this.state.data.description}</p>
+          </div>
+          )
+          }
         </CommonContent>
       </MainTemplate>
     );
