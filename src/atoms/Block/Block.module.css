@@ -1,7 +1,0 @@
-.block{
-    display: flex;
-    border: 1px solid #EF161E;
-    background-color: white;
-    height: 500px;
-    flex-direction: column;
-}
