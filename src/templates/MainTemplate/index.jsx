@@ -13,7 +13,7 @@ const MainTemplate = ({ children }) => (
       <LeftMenu leftMenuContent={links} />
       {children}
     </div>
-    <Footer />
+    <Footer/>
   </div>
 );
 MainTemplate.propTypes = {
