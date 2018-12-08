@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/FS_project/precache-manifest.a800f6cf863c709a2a581dae7007268c.js"
+  "https://ReginaGimazova.github.io/FS_project/precache-manifest.cbc2bbaf8a64ac81afc5b1c5ca3de294.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/FS_project/index.html", {
+workbox.routing.registerNavigationRoute("https://ReginaGimazova.github.io/FS_project/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

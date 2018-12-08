@@ -1,13 +1,13 @@
 {
-  "main.css": "/FS_project/static/css/main.c9251ae5.chunk.css",
-  "main.js": "/FS_project/static/js/main.870c3cdf.chunk.js",
-  "main.js.map": "/FS_project/static/js/main.870c3cdf.chunk.js.map",
-  "static/js/1.64494fa2.chunk.js": "/FS_project/static/js/1.64494fa2.chunk.js",
-  "static/js/1.64494fa2.chunk.js.map": "/FS_project/static/js/1.64494fa2.chunk.js.map",
-  "runtime~main.js": "/FS_project/static/js/runtime~main.0373d649.js",
-  "runtime~main.js.map": "/FS_project/static/js/runtime~main.0373d649.js.map",
-  "static/css/main.c9251ae5.chunk.css.map": "/FS_project/static/css/main.c9251ae5.chunk.css.map",
-  "index.html": "/FS_project/index.html",
-  "precache-manifest.a800f6cf863c709a2a581dae7007268c.js": "/FS_project/precache-manifest.a800f6cf863c709a2a581dae7007268c.js",
-  "service-worker.js": "/FS_project/service-worker.js"
+  "main.css": "https://ReginaGimazova.github.io/FS_project/static/css/main.c9251ae5.chunk.css",
+  "main.js": "https://ReginaGimazova.github.io/FS_project/static/js/main.97ffa1bf.chunk.js",
+  "main.js.map": "https://ReginaGimazova.github.io/FS_project/static/js/main.97ffa1bf.chunk.js.map",
+  "static/js/1.64494fa2.chunk.js": "https://ReginaGimazova.github.io/FS_project/static/js/1.64494fa2.chunk.js",
+  "static/js/1.64494fa2.chunk.js.map": "https://ReginaGimazova.github.io/FS_project/static/js/1.64494fa2.chunk.js.map",
+  "runtime~main.js": "https://ReginaGimazova.github.io/FS_project/static/js/runtime~main.cde087e5.js",
+  "runtime~main.js.map": "https://ReginaGimazova.github.io/FS_project/static/js/runtime~main.cde087e5.js.map",
+  "static/css/main.c9251ae5.chunk.css.map": "https://ReginaGimazova.github.io/FS_project/static/css/main.c9251ae5.chunk.css.map",
+  "index.html": "https://ReginaGimazova.github.io/FS_project/index.html",
+  "precache-manifest.cbc2bbaf8a64ac81afc5b1c5ca3de294.js": "https://ReginaGimazova.github.io/FS_project/precache-manifest.cbc2bbaf8a64ac81afc5b1c5ca3de294.js",
+  "service-worker.js": "https://ReginaGimazova.github.io/FS_project/service-worker.js"
 }
