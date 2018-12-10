@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://ReginaGimazova.github.io/FS_project/precache-manifest.9392a5f4e6846474a6837b111cc6dda0.js"
+  "https://ReginaGimazova.github.io/FS_project/precache-manifest.190b8007a16fe41babb128b7360f7324.js"
 );
 
 workbox.clientsClaim();
