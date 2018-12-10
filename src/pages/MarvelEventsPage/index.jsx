@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import qs from 'qs';
-import { Redirect } from 'react-router-dom';
+import styles from './MarvelEventsPage.module.css';
 import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
 import MarvelGallery from '../../organisms/MarvelGallery';
@@ -11,9 +11,8 @@ import PaginationLink from '../../atoms/PaginationLnk';
 import PaginationEllipsis from '../../atoms/PaginationEllipsis';
 import PaginationPrev from '../../atoms/PaginationPrev';
 import PaginationNext from '../../atoms/PaginationNext';
-import styles from './MarvelPage.module.css';
 
-class MarvelPage extends Component {
+class MarvelEventsPage extends Component {
   state = {
     loading: false,
     error: false,
@@ -31,7 +30,7 @@ class MarvelPage extends Component {
       error: false,
     });
     axios
-      .get(`${process.env.REACT_APP_MARVEL_PATH}/v1/public/characters`, {
+      .get(`${process.env.REACT_APP_MARVEL_PATH}/v1/public/events`, {
         params: {
           apikey: process.env.REACT_APP_MARVEL_API_KEY,
           limit: 20,
@@ -106,35 +105,35 @@ class MarvelPage extends Component {
     return (
       <MainTemplate>
         <CommonContent>
-          <Title>Marvel characters</Title>
+          <Title>Marvel events</Title>
           <MarvelGallery>
             {this.state.data}
           </MarvelGallery>
           {this.state.loading && 'Loading...'}
           {!this.state.loading && !this.state.error && this.state.data.length === 0 && 'Empty'}
           {this.state.error && (
-          <div>
-            <p>Loading error</p>
-            <button type="button" onClick={this.fetch}>reload</button>
-          </div>
+            <div>
+              <p>Loading error</p>
+              <button type="button" onClick={this.fetch}>reload</button>
+            </div>
           )}
 
           {!this.state.error && !this.state.loading && (
-          <PaginationComponent>
-            <PaginationPrev currentPage={currentPage} href={`${this.props.match.url}?page=${currentPage - 1}`} />
-            <PaginationLink href={`${this.props.match.url}?page=1`}>1</PaginationLink>
-            {this.returnPage() > 4 && (
-              <PaginationEllipsis />
-            )}
-            <ul className={styles.subPagination}>
-              {pg.map(page => <PaginationLink href={`${this.props.match.url}?page=${page}`}>{page}</PaginationLink>)}
-            </ul>
-            {this.returnPage() < (lastPage - 4) && (
-              <PaginationEllipsis />
-            )}
-            <PaginationLink href={`${this.props.match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
-            <PaginationNext currentPage={currentPage} href={`${this.props.match.url}?page=${currentPage + 1}`} />
-          </PaginationComponent>
+            <PaginationComponent>
+              <PaginationPrev currentPage={currentPage} href={`${this.props.match.url}?page=${currentPage - 1}`} />
+              <PaginationLink href={`${this.props.match.url}?page=1`}>1</PaginationLink>
+              {this.returnPage() > 4 && (
+                <PaginationEllipsis />
+              )}
+              <ul className={styles.subPagination}>
+                {pg.map(page => <PaginationLink href={`${this.props.match.url}?page=${page}`}>{page}</PaginationLink>)}
+              </ul>
+              {this.returnPage() < (lastPage - 4) && (
+                <PaginationEllipsis />
+              )}
+              <PaginationLink href={`${this.props.match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
+              <PaginationNext currentPage={currentPage} href={`${this.props.match.url}?page=${currentPage + 1}`} />
+            </PaginationComponent>
 
           )}
         </CommonContent>
@@ -143,4 +142,4 @@ class MarvelPage extends Component {
   }
 }
 
-export default MarvelPage;
+export default MarvelEventsPage;

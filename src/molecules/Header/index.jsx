@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../atoms/Button';
-import MenuLink from '../../atoms/MenuLink/index';
+import MenuLink from '../../atoms/CommonLink/index';
 import styles from './Header.module.css';
 
 const Header = () => (

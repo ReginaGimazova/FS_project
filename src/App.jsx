@@ -9,18 +9,22 @@ import LoginPage from './pages/AuthPage';
 import MarvelPage from './pages/MarvelPage';
 import MarvelMainPage from './pages/MarvelMainPage';
 import RegistrationPage from './pages/RegistrationPage';
+import MarvelCreatorsPage from './pages/MarvelCreatorsPage';
 import MarvelCharacterPage from './pages/MarvelCharacterPage';
+import MarvelEventsPage from './pages/MarvelEventsPage';
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route path="/" component={HomePage} exact />
       <Route path="/news" component={NewsPage} exact />
       <Route path="/info" component={InfoPage} exact />
       <Route path="/profile" component={ProfilePage} exact />
       <Route path="/registration" component={RegistrationPage} exact />
-      <Route path="/marvel" component={MarvelMainPage} exact/>
-      <Route path="/marvel/characters" component={MarvelPage}/>
+      <Route path="/marvel" component={MarvelMainPage} exact />
+      <Route path="/marvel/characters" component={MarvelPage} exact />
+      <Route path="/marvel/creators" component={MarvelCreatorsPage} exact />
+      <Route path="/marvel/events" component={MarvelEventsPage} />
       <Route path="/marvel/characters/:id" component={MarvelCharacterPage} exact />
       <Route path="/authentication" component={LoginPage} />
       <Route component={ErrorPage} exact />

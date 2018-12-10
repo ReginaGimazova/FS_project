@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './MenuLink.module.css';
+import styles from './CommonLink.module.css';
 
 const MenuLink = props => (
   <Link
