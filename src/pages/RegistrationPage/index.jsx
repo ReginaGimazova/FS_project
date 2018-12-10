@@ -6,7 +6,7 @@ import Title from '../../atoms/Title';
 import Button from '../../atoms/Button';
 import FormControl from '../../atoms/FormControl';
 import styles from './Registration.module.css';
-import MenuLink from '../../atoms/MenuLink';
+import MenuLink from '../../atoms/CommonLink';
 
 class RegistrationPage extends Component {
     initialState= {

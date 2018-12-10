@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import CommonLink from '../CommonLink';
 import styles from './PaginationLink.module.css';
 
 const PaginationLink = props => (
   <div className={styles.pageLink}>
-    <Link to={props.href}>{props.children}</Link>
+    <CommonLink href={props.href} className="paginationLink">{props.children}</CommonLink>
   </div>
 );
 

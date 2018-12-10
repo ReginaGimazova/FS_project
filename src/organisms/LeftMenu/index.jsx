@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './LeftMenu.module.css';
-import MenuLink from '../../atoms/MenuLink';
+import MenuLink from '../../atoms/CommonLink';
 
 const LeftMenu = props => (
   <aside className={styles.leftMenu}>
