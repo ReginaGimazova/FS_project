@@ -2,24 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MarvelCard from '../../molecules/MarvelCard';
-import styles from './MarvelGallery.module.css';
+import styles from './MarvelCreatorGallery.module.css';
 
-const MarvelGallery = ({ children }) => (
+const MarvelCreatorGallery = ({ children }) => (
   <div className={styles.mrvGallery}>
     {children.map(child => (
       <MarvelCard
         key={child.id}
-        url={`/marvel/characters/${child.id}`}
         thumbnail={child.thumbnail}
-        name={child.name}
+        name={child.fullName}
         id={child.id}
+        url={`/marvel/creators/${child.id}`}
       />
     ))}
   </div>
 );
 
-MarvelGallery.propTypes = {
+MarvelCreatorGallery.propTypes = {
   children: PropTypes.array.isRequired,
 };
 
-export default MarvelGallery;
+export default MarvelCreatorGallery;

@@ -1,4 +1,5 @@
 /* eslint-disable react/require-default-props */
+/* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -72,20 +73,20 @@ class MarvelCharacterPage extends Component {
             <Title>{data.name}</Title>
             <p>{data.description}</p>
             <Subtitle>Comics</Subtitle>
-            {data.comics.items.map(c => (
-              <p>{c.name}</p>
+            {data.comics.items.map((c, i) => (
+              <p key={i}>{c.name}</p>
             ))}
             <Subtitle>Stories</Subtitle>
-            {data.stories.items.map(story => (
-              <p>{story.name}</p>
+            {data.stories.items.map((story, i) => (
+              <p key={i}>{story.name}</p>
             ))}
             <Subtitle>Events</Subtitle>
-            {data.events.items.map(event => (
-              <p>{event.name}</p>
+            {data.events.items.map((event, i) => (
+              <p key={i}>{event.name}</p>
             ))}
             <Subtitle>Series</Subtitle>
-            {data.series.items.map(s => (
-              <p>{s.name}</p>
+            {data.series.items.map((s, i) => (
+              <p key={i}>{s.name}</p>
             ))}
           </div>
           )}
@@ -98,7 +99,7 @@ class MarvelCharacterPage extends Component {
 MarvelCharacterPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      field1: PropTypes.number.isRequired,
+      field1: PropTypes.number,
       filed2: PropTypes.string,
     }),
   }),
