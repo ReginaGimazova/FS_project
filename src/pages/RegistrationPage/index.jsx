@@ -6,7 +6,7 @@ import Title from '../../atoms/Title';
 import Button from '../../atoms/Button';
 import FormControl from '../../atoms/FormControl';
 import styles from './Registration.module.css';
-import MenuLink from '../../atoms/CommonLink';
+import CommonLink from '../../atoms/CommonLink';
 
 class RegistrationPage extends Component {
     initialState= {
@@ -85,7 +85,7 @@ class RegistrationPage extends Component {
               />
             </FormControl>
             <Button type="submit">Send</Button>
-            <MenuLink href="/login" className="leftMenuLink"> Are you registered? log in</MenuLink>
+            <CommonLink href="/login" className="blackLink"> Are you registered? log in</CommonLink>
           </form>
         </FormTemplate>
       );

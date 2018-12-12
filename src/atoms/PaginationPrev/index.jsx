@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuLink from '../CommonLink';
+import CommonLink from '../CommonLink';
 
 const PaginationPrev = ({ href }) => (
-  <MenuLink href={href}>
+  <CommonLink href={href}>
     previous
-  </MenuLink>
+  </CommonLink>
 );
 PaginationPrev.propTypes = {
   href: PropTypes.string,

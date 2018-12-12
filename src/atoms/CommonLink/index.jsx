@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './CommonLink.module.css';
 
-const MenuLink = ({ href, children, className }) => (
+const CommonLink = ({ href, children, className }) => (
   <Link
     to={href}
     className={classNames(styles.link, { [styles.blackLink]: className === 'blackLink' },
@@ -14,15 +14,16 @@ const MenuLink = ({ href, children, className }) => (
   </Link>
 );
 
-MenuLink.propTypes = {
+CommonLink.propTypes = {
   href: PropTypes.string,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
 };
 
-MenuLink.defaultProps = {
+CommonLink.defaultProps = {
   href: '',
   className: 'link',
+  children: PropTypes.string,
 };
 
-export default MenuLink;
+export default CommonLink;

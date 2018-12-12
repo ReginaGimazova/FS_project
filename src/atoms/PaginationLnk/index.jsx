@@ -11,9 +11,10 @@ const PaginationLink = ({ href, children }) => (
 
 PaginationLink.propTypes = {
   href: PropTypes.string,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 PaginationLink.defaultProps = {
   href: '',
+  children: PropTypes.number,
 };
 export default PaginationLink;

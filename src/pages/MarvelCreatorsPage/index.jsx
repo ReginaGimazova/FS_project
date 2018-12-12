@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/require-default-props,react/forbid-prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import qs from 'qs';
-import styles from './MarvelCreatorsPage.module.css';
 import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
 import MarvelGallery from '../../organisms/MarvelGallery';
@@ -12,6 +12,7 @@ import PaginationLink from '../../atoms/PaginationLnk';
 import PaginationEllipsis from '../../atoms/PaginationEllipsis';
 import PaginationPrev from '../../atoms/PaginationPrev';
 import PaginationNext from '../../atoms/PaginationNext';
+import styles from './MarvelCreatorsPage.module.css';
 
 class MarvelCreatorsPage extends Component {
   state = {
@@ -68,12 +69,20 @@ class MarvelCreatorsPage extends Component {
   returnPage() {
     const { location } = this.props;
     const parseURL = qs.parse(location.search);
-    return parseURL['?page'];
+    return parseInt(parseURL['?page'], 10);
+  }
+
+  validateURL() {
+    if (/^[1-9]([0-9])*$/.test(this.returnPage())) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
   }
 
   returnPageArr() {
     const page = parseInt(this.returnPage(), 10);
-    const lastPage = parseInt(this.countOfPages(), 10);
+    const lastPage = this.countOfPages();
     const pageArray = [];
     if (page >= 1 && page <= 4) {
       [2, 3, 4, 5].map(p => pageArray.push(p));
@@ -88,15 +97,12 @@ class MarvelCreatorsPage extends Component {
     return pageArray;
   }
 
+  // disable next and prev links
 
   render() {
-    const lastPage = parseInt(this.countOfPages(), 10);
-    const currentPage = parseInt(this.returnPage(), 10);
-    const pages = [];
+    const lastPage = this.countOfPages();
+    const currentPage = this.returnPage();
     const pg = this.returnPageArr();
-    for (let i = 1; i < lastPage; i += 1) {
-      pages.push(i);
-    }
 
     const { data } = this.state;
     const { loading } = this.state;
@@ -105,8 +111,8 @@ class MarvelCreatorsPage extends Component {
     return (
       <MainTemplate>
         <CommonContent>
-          <Title>Marvel Creators</Title>
-          <MarvelGallery>
+          <Title>Marvel creators</Title>
+          <MarvelGallery content="creators" url={match.url}>
             {data}
           </MarvelGallery>
           {loading && 'Loading...'}
@@ -120,7 +126,7 @@ class MarvelCreatorsPage extends Component {
 
           {!error && !loading && (
             <PaginationComponent>
-              <PaginationPrev href={`${match.url}?page=${currentPage - 1}`} />
+              <PaginationPrev currentPage={currentPage} href={`${match.url}?page=${currentPage - 1}`} />
               <PaginationLink href={`${match.url}?page=1`}>1</PaginationLink>
               {this.returnPage() > 4 && (
                 <PaginationEllipsis />
@@ -132,7 +138,7 @@ class MarvelCreatorsPage extends Component {
                 <PaginationEllipsis />
               )}
               <PaginationLink href={`${match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
-              <PaginationNext href={`${match.url}?page=${currentPage + 1}`} />
+              <PaginationNext currentPage={currentPage} href={`${match.url}?page=${currentPage + 1}`} />
             </PaginationComponent>
 
           )}
@@ -141,5 +147,15 @@ class MarvelCreatorsPage extends Component {
     );
   }
 }
+
+MarvelCreatorsPage.propTypes = {
+  location: PropTypes.object.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      field1: PropTypes.number,
+      filed2: PropTypes.string,
+    }),
+  }),
+};
 
 export default MarvelCreatorsPage;

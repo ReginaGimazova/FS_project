@@ -12,6 +12,7 @@ import RegistrationPage from './pages/RegistrationPage';
 import MarvelCreatorsPage from './pages/MarvelCreatorsPage';
 import MarvelCharacterPage from './pages/MarvelCharacterPage';
 import MarvelEventsPage from './pages/MarvelEventsPage';
+import MarvelCreatorPage from './pages/MarvelCreatorPage';
 
 const App = () => (
   <BrowserRouter basename="/FS_project">
@@ -26,6 +27,7 @@ const App = () => (
       <Route path="/marvel/creators" component={MarvelCreatorsPage} exact />
       <Route path="/marvel/events" component={MarvelEventsPage} />
       <Route path="/marvel/characters/:id" component={MarvelCharacterPage} exact />
+      <Route path="/marvel/creators/:id" component={MarvelCreatorPage} exact />
       <Route path="/authentication" component={LoginPage} />
       <Route component={ErrorPage} exact />
     </Switch>

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types,react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../molecules/Card';
@@ -9,12 +10,12 @@ const CardList = ({ children }) => (
     <Title>
             ARTICLES
     </Title>
-    {children.map(cardContent => (<Card {...cardContent} />))}
+    {children.map((cardContent, i) => (<Card key={i} {...cardContent} />))}
   </div>
 );
 
 CardList.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.array.isRequired,
 };
 
 export default CardList;

@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/forbid-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -150,10 +150,10 @@ class MarvelPage extends Component {
 }
 
 MarvelPage.propTypes = {
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      field1: PropTypes.number.isRequired,
+      field1: PropTypes.number,
       filed2: PropTypes.string,
     }),
   }),
