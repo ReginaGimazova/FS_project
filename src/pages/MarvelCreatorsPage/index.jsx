@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import axios from 'axios';
 import qs from 'qs';
@@ -22,6 +23,13 @@ class MarvelCreatorsPage extends Component {
 
   componentDidMount() {
     this.fetch();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { location } = this.props;
+    if (prevProps.location.search !== location.search) {
+      this.fetch();
+    }
   }
 
   fetch = () => {
@@ -52,26 +60,20 @@ class MarvelCreatorsPage extends Component {
       });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    prevProps.location.search !== this.props.location.search ? this.fetch() : console.log('not update');
-  }
-
   countOfPages() {
-    return Math.ceil(this.state.total / 20);
+    const { total } = this.state;
+    return Math.ceil(total / 20);
   }
 
   returnPage() {
-    const parseURL = qs.parse(this.props.location.search);
+    const { location } = this.props;
+    const parseURL = qs.parse(location.search);
     return parseURL['?page'];
   }
 
-  returnQueryString(page) {
-    return qs.stringify({ page }, { addQueryPrefix: true });
-  }
-
   returnPageArr() {
-    const page = parseInt(this.returnPage());
-    const lastPage = parseInt(this.countOfPages());
+    const page = parseInt(this.returnPage(), 10);
+    const lastPage = parseInt(this.countOfPages(), 10);
     const pageArray = [];
     if (page >= 1 && page <= 4) {
       [2, 3, 4, 5].map(p => pageArray.push(p));
@@ -88,45 +90,49 @@ class MarvelCreatorsPage extends Component {
 
 
   render() {
-    const lastPage = parseInt(this.countOfPages());
-    const currentPage = parseInt(this.returnPage());
+    const lastPage = parseInt(this.countOfPages(), 10);
+    const currentPage = parseInt(this.returnPage(), 10);
     const pages = [];
     const pg = this.returnPageArr();
-    for (let i = 1; i < lastPage; i++) {
+    for (let i = 1; i < lastPage; i += 1) {
       pages.push(i);
     }
 
+    const { data } = this.state;
+    const { loading } = this.state;
+    const { error } = this.state;
+    const { match } = this.props;
     return (
       <MainTemplate>
         <CommonContent>
           <Title>Marvel Creators</Title>
           <MarvelGallery>
-            {this.state.data}
+            {data}
           </MarvelGallery>
-          {this.state.loading && 'Loading...'}
-          {!this.state.loading && !this.state.error && this.state.data.length === 0 && 'Empty'}
-          {this.state.error && (
+          {loading && 'Loading...'}
+          {!loading && !error && data.length === 0 && 'Empty'}
+          {error && (
             <div>
               <p>Loading error</p>
               <button type="button" onClick={this.fetch}>reload</button>
             </div>
           )}
 
-          {!this.state.error && !this.state.loading && (
+          {!error && !loading && (
             <PaginationComponent>
-              <PaginationPrev href={`${this.props.match.url}?page=${currentPage - 1}`} />
-              <PaginationLink href={`${this.props.match.url}?page=1`}>1</PaginationLink>
+              <PaginationPrev href={`${match.url}?page=${currentPage - 1}`} />
+              <PaginationLink href={`${match.url}?page=1`}>1</PaginationLink>
               {this.returnPage() > 4 && (
                 <PaginationEllipsis />
               )}
               <ul className={styles.subPagination}>
-              {pg.map(page => <PaginationLink href={`${this.props.match.url}?page=${page}`}>{page}</PaginationLink>)}
+                {pg.map(page => <PaginationLink href={`${match.url}?page=${page}`}>{page}</PaginationLink>)}
               </ul>
               {this.returnPage() < (lastPage - 4) && (
                 <PaginationEllipsis />
               )}
-              <PaginationLink href={`${this.props.match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
-              <PaginationNext href={`${this.props.match.url}?page=${currentPage + 1}`} />
+              <PaginationLink href={`${match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
+              <PaginationNext href={`${match.url}?page=${currentPage + 1}`} />
             </PaginationComponent>
 
           )}

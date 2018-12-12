@@ -6,8 +6,8 @@ import styles from './Header.module.css';
 const Header = () => (
   <header className={styles.header}>
     <nav className={styles.menu}>
-      <MenuLink href="/">Home</MenuLink>
-      <MenuLink href="/info">About</MenuLink>
+      <MenuLink href="/" className="link navLink">Home</MenuLink>
+      <MenuLink href="/info" className="link navLink">About</MenuLink>
     </nav>
     <Button type="submit">LOGOUT</Button>
   </header>

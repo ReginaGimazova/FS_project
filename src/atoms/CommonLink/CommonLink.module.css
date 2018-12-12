@@ -6,6 +6,11 @@
     text-transform: uppercase;
     font-family: "Arial", monospace;
 }
+
+.navLink {
+    margin-right: 50px;
+}
+
 .blackLink{
     color: black !important;
     margin: 10px
