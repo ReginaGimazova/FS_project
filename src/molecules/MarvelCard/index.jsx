@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MarvelCard.module.css';
@@ -16,7 +17,7 @@ const MarvelCard = ({ children }) => (
 );
 
 MarvelCard.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default MarvelCard;
