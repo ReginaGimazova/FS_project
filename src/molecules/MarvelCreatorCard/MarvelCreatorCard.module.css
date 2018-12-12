@@ -1,9 +1,0 @@
-.marvelCard{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding: 10px;
-    margin-bottom: 30px;
-    height: 250px;
-    width: 150px;
-}

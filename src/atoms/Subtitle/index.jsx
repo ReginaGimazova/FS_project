@@ -6,6 +6,6 @@ const Subtitle = ({ children }) => (
   <h4 className={styles.subtitle}>{children}</h4>
 );
 Subtitle.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 export default Subtitle;

@@ -5,7 +5,7 @@ import axios from 'axios';
 import qs from 'qs';
 import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
-import MarvelGallery from '../../organisms/MarvelGallery';
+import MarvelCreatorGallery from '../../organisms/MarvelCreatorGallery';
 import CommonContent from '../../organisms/CommonContent';
 import PaginationComponent from '../../molecules/PaginationComponent';
 import PaginationLink from '../../atoms/PaginationLnk';
@@ -112,9 +112,9 @@ class MarvelCreatorsPage extends Component {
       <MainTemplate>
         <CommonContent>
           <Title>Marvel creators</Title>
-          <MarvelGallery content="creators" url={match.url}>
+          <MarvelCreatorGallery>
             {data}
-          </MarvelGallery>
+          </MarvelCreatorGallery>
           {loading && 'Loading...'}
           {!loading && !error && data.length === 0 && 'Empty'}
           {error && (
