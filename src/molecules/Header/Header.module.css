@@ -7,6 +7,6 @@
 
 .menu{
     display: flex;
-    justify-content: space-between;
-    width: 10%;
+    justify-content: left;
+    width: 40%;
 }

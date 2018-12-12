@@ -1,5 +1,7 @@
+/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Title from '../../atoms/Title';
 import Subtitle from '../../atoms/Subtitle';
 import MainTemplate from '../../templates/MainTemplate';
@@ -11,8 +13,6 @@ class MarvelCharacterPage extends Component {
     error: false,
     data: null,
   };
-
-  id = this.props.match.params.id;
 
   componentDidMount() {
     setTimeout(() => {
@@ -26,8 +26,11 @@ class MarvelCharacterPage extends Component {
       error: false,
       data: null,
     });
+
+    const { match } = this.props;
+    const { params } = match;
     axios
-      .get(`${process.env.REACT_APP_MARVEL_PATH}/v1/public/characters/${this.id}`, {
+      .get(`${process.env.REACT_APP_MARVEL_PATH}/v1/public/characters/${params.id}`, {
         params: {
           apikey: process.env.REACT_APP_MARVEL_API_KEY,
         },
@@ -48,37 +51,40 @@ class MarvelCharacterPage extends Component {
   };
 
   render() {
+    const { loading } = this.state;
+    const { error } = this.state;
+    const { data } = this.state;
     return (
       <MainTemplate>
         <CommonContent>
           <Title>Marvel character</Title>
-          {this.state.loading && 'loading'}
-          {!this.state.loading && !this.state.error && this.state.data === null && 'Empty'}
-          {this.state.error && (
+          {loading && 'loading'}
+          {!loading && !error && data === null && 'Empty'}
+          {error && (
             <div>
               <p>error</p>
               <button type="button" onClick={this.fetch}>reload</button>
             </div>
           )}
-          {this.state.data !== null
+          {data !== null
           && (
-          <div key={this.state.data.id}>
-            <Title>{this.state.data.name}</Title>
-            <p>{this.state.data.description}</p>
+          <div key={data.id}>
+            <Title>{data.name}</Title>
+            <p>{data.description}</p>
             <Subtitle>Comics</Subtitle>
-            {this.state.data.comics.items.map(c => (
+            {data.comics.items.map(c => (
               <p>{c.name}</p>
             ))}
             <Subtitle>Stories</Subtitle>
-            {this.state.data.stories.items.map(story => (
+            {data.stories.items.map(story => (
               <p>{story.name}</p>
             ))}
             <Subtitle>Events</Subtitle>
-            {this.state.data.events.items.map(event => (
+            {data.events.items.map(event => (
               <p>{event.name}</p>
             ))}
             <Subtitle>Series</Subtitle>
-            {this.state.data.series.items.map(s => (
+            {data.series.items.map(s => (
               <p>{s.name}</p>
             ))}
           </div>
@@ -88,4 +94,14 @@ class MarvelCharacterPage extends Component {
     );
   }
 }
+
+MarvelCharacterPage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      field1: PropTypes.number.isRequired,
+      filed2: PropTypes.string,
+    }),
+  }),
+};
+
 export default MarvelCharacterPage;

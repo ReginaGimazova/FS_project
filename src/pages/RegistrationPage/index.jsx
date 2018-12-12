@@ -38,7 +38,7 @@ class RegistrationPage extends Component {
     };
 
     validateEmail = () => {
-      const email = this.state.email;
+      const { email } = this.state;
       if (email.length === 0) {
         return false;
       }
@@ -46,6 +46,9 @@ class RegistrationPage extends Component {
     };
 
     render() {
+      const { email } = this.state;
+      const { password } = this.state;
+      const { passwordRepeat } = this.state;
       return (
         <FormTemplate>
           <form onSubmit={this.handleSubmit} className={styles.form}>
@@ -54,7 +57,7 @@ class RegistrationPage extends Component {
               <Label htmlFor="email">email</Label>
               <Input
                 type="email"
-                value={this.state.email}
+                value={email}
                 id="email"
                 name="email"
                 error={this.validateEmail}
@@ -67,7 +70,7 @@ class RegistrationPage extends Component {
                 type="password"
                 id="password"
                 name="password"
-                value={this.state.password}
+                value={password}
                 onChange={this.handlerPasswordChange}
               />
             </FormControl>
@@ -77,7 +80,7 @@ class RegistrationPage extends Component {
                 type="password"
                 id="repeatPassword"
                 name="passwordRepeat"
-                value={this.state.passwordRepeat}
+                value={passwordRepeat}
                 onChange={this.handlerPasswordChange}
               />
             </FormControl>

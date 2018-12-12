@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MarvelCard.module.css';
-import MenuLink from '../../atoms/CommonLink/index';
+import CommonLink from '../../atoms/CommonLink';
 
 const MarvelCard = ({ children }) => (
   <div key={children.id} className={styles.marvelCard}>
     <img alt="" src={`${children.thumbnail.path}/portrait_xlarge.${children.thumbnail.extension}`} />
-    <MenuLink
+    <CommonLink
       href={`/marvel/characters/${children.id}`}
-      className="leftMenuLink"
+      className="blackLink"
     >
       {children.name}
-    </MenuLink>
+    </CommonLink>
   </div>
 );
 
