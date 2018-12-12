@@ -1,17 +1,17 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MarvelCard.module.css';
+import styles from './MarvelCreatorCard.module.css';
 import CommonLink from '../../atoms/CommonLink';
 
-const MarvelCard = ({ children }) => (
+const MarvelCard = ({ children, url }) => (
   <div key={children.id} className={styles.marvelCard}>
     <img alt="" src={`${children.thumbnail.path}/portrait_xlarge.${children.thumbnail.extension}`} />
     <CommonLink
-      href={`/marvel/characters/${children.id}`}
+      href={`${url}/${children.id}`}
       className="blackLink"
     >
-      {children.name}
+      {children.firstName}
     </CommonLink>
   </div>
 );

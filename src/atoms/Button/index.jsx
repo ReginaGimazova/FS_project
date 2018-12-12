@@ -14,7 +14,7 @@ const Button = ({ type, onclick, children }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['button', 'submit']),
   onclick: PropTypes.func,
 };
