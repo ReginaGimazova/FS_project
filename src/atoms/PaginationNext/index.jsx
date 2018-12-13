@@ -2,15 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CommonLink from '../CommonLink';
 
-const PaginationNext = ({ href, currentPage }) => (
-  <CommonLink href={href} currentPage={currentPage}>next</CommonLink>
+const PaginationNext = ({ to }) => (
+  <CommonLink href={to} className="blackLink">next</CommonLink>
 );
 PaginationNext.propTypes = {
-  href: PropTypes.string,
-  currentPage: PropTypes.number,
+  to: PropTypes.string,
 };
 PaginationNext.defaultProps = {
-  href: '',
-  currentPage: 1,
+  to: '',
 };
 export default PaginationNext;

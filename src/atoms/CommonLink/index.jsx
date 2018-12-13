@@ -8,7 +8,8 @@ const CommonLink = ({ href, children, className }) => (
   <Link
     to={href}
     className={classNames(styles.link, { [styles.blackLink]: className === 'blackLink' },
-      { [styles.navLink]: className === 'navLink' }, { [styles.paginationLink]: className === 'paginationLink' })}
+      { [styles.navLink]: className === 'navLink' }, { [styles.paginationLink]: className === 'paginationLink' },
+      { [styles.blackPaginationLink]: className === 'blackPaginationLink' })}
   >
     {children}
   </Link>

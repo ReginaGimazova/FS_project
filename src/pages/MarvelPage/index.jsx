@@ -8,11 +8,6 @@ import MainTemplate from '../../templates/MainTemplate';
 import MarvelGallery from '../../organisms/MarvelGallery';
 import CommonContent from '../../organisms/CommonContent';
 import PaginationComponent from '../../molecules/PaginationComponent';
-import PaginationLink from '../../atoms/PaginationLnk';
-import PaginationEllipsis from '../../atoms/PaginationEllipsis';
-import PaginationPrev from '../../atoms/PaginationPrev';
-import PaginationNext from '../../atoms/PaginationNext';
-import styles from './MarvelPage.module.css';
 
 class MarvelPage extends Component {
   state = {
@@ -69,8 +64,8 @@ class MarvelPage extends Component {
 
   returnPage() {
     const { location } = this.props;
-    const parseURL = qs.parse(location.search);
-    return parseInt(parseURL['?page'], 10);
+    const parseURL = qs.parse(location.search, { ignoreQueryPrefix: true });
+    return parseInt(parseURL.page, 10);
   }
 
   validateURL() {
@@ -81,29 +76,9 @@ class MarvelPage extends Component {
     }
   }
 
-  returnPageArr() {
-    const page = parseInt(this.returnPage(), 10);
-    const lastPage = this.countOfPages();
-    const pageArray = [];
-    if (page >= 1 && page <= 4) {
-      [2, 3, 4, 5].map(p => pageArray.push(p));
-    }
-
-    if (page > 4 && page <= lastPage - 4) {
-      [page - 1, page, page + 1].map(p => pageArray.push(p));
-    }
-    if (page > (lastPage - 4) && [page <= lastPage]) {
-      [lastPage - 4, lastPage - 3, lastPage - 2, lastPage - 1].map(p => pageArray.push(p));
-    }
-    return pageArray;
-  }
-
-  // disable next and prev links
-
   render() {
     const lastPage = this.countOfPages();
     const currentPage = this.returnPage();
-    const pg = this.returnPageArr();
 
     const { data } = this.state;
     const { loading } = this.state;
@@ -126,22 +101,11 @@ class MarvelPage extends Component {
           )}
 
           {!error && !loading && (
-          <PaginationComponent>
-            <PaginationPrev currentPage={currentPage} href={`${match.url}?page=${currentPage - 1}`} />
-            <PaginationLink href={`${match.url}?page=1`}>1</PaginationLink>
-            {this.returnPage() > 4 && (
-              <PaginationEllipsis />
-            )}
-            <ul className={styles.subPagination}>
-              {pg.map(page => <PaginationLink href={`${match.url}?page=${page}`}>{page}</PaginationLink>)}
-            </ul>
-            {this.returnPage() < (lastPage - 4) && (
-              <PaginationEllipsis />
-            )}
-            <PaginationLink href={`${match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
-            <PaginationNext currentPage={currentPage} href={`${match.url}?page=${currentPage + 1}`} />
-          </PaginationComponent>
-
+            <PaginationComponent
+              total={lastPage}
+              location={match.url}
+              currentPage={currentPage}
+            />
           )}
         </CommonContent>
       </MainTemplate>
