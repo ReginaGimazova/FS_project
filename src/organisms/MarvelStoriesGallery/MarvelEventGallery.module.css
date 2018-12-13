@@ -1,0 +1,13 @@
+.mrvGallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+@media all and (max-width: 640px){
+    .mrvGallery{
+        justify-content: center;
+    }
+}
