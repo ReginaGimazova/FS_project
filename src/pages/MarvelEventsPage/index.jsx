@@ -6,7 +6,6 @@ import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
 import MarvelEventGallery from '../../organisms/MarvelEventGallery';
 import CommonContent from '../../organisms/CommonContent';
-import PaginationComponent from '../../molecules/PaginationComponent';
 
 class MarvelEventsPage extends Component {
   state = {
@@ -74,31 +73,10 @@ class MarvelEventsPage extends Component {
     }
   }
 
-  returnPageArr() {
-    const page = parseInt(this.returnPage(), 10);
-    const lastPage = this.countOfPages();
-    const pageArray = [];
-    if (page >= 1 && page <= 4) {
-      [2, 3, 4, 5].map(p => pageArray.push(p));
-    }
-
-    if (page > 4 && page <= lastPage - 4) {
-      [page - 1, page, page + 1].map(p => pageArray.push(p));
-    }
-    if (page > (lastPage - 4) && [page <= lastPage]) {
-      [lastPage - 4, lastPage - 3, lastPage - 2, lastPage - 1].map(p => pageArray.push(p));
-    }
-    return pageArray;
-  }
-
   render() {
-    const lastPage = this.countOfPages();
-    const currentPage = this.returnPage();
-
     const { data } = this.state;
     const { loading } = this.state;
     const { error } = this.state;
-    const { match } = this.props;
     return (
       <MainTemplate>
         <CommonContent>
@@ -113,15 +91,6 @@ class MarvelEventsPage extends Component {
               <p>Loading error</p>
               <button type="button" onClick={this.fetch}>reload</button>
             </div>
-          )}
-
-          {!error && !loading && (
-            <PaginationComponent
-              total={lastPage}
-              location={match.url}
-              currentPage={currentPage}
-            />
-
           )}
         </CommonContent>
       </MainTemplate>
