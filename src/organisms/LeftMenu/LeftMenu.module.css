@@ -8,3 +8,9 @@
     height: 100%;
     margin-top: 20px;
 }
+
+@media all and (max-width: 640px){
+    .leftMenu{
+        width: 100%;
+    }
+}

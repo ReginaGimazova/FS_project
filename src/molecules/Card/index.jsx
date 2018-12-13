@@ -20,7 +20,7 @@ class Card extends Component {
         <section className={styles.card}>
           <div className={styles.head}>
             <h4>{title}</h4>
-            <Button onclick={this.handleClick} type="button">
+            <Button className="cardButton" onclick={this.handleClick} type="button">
               {isShown === false ? 'open' : 'close' }
             </Button>
           </div>

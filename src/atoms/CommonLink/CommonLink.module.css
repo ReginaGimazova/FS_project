@@ -22,6 +22,21 @@
 
 .paginationLink{
     color: black !important;
-    margin: 10px;
-    padding: 0 !important;
+    font-size: 17px;
+}
+
+.blackPaginationLink{
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+@media all and (max-width: 640px){
+    .paginationLink{
+        font-size: 14px;
+    }
+
+    .blackPaginationLink{
+        font-size: 14px;
+    }
 }

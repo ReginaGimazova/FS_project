@@ -1,27 +1,7 @@
 .pagination{
-    list-style-type: none;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    border: 1px gray solid;
     border-radius: 5px;
-    border: lightgrey 1px solid;
     align-self: center;
-    margin: 10px 0;
-    padding: 0;
-}
-
-li{
-    float: left;
-    padding: 7px 10px;
-    font-family: "Arial", monospace ;
-    font-size: 16px;
-    text-transform: lowercase;
-}
-
-li:first-child {
-    background-color: black;
-    color: white;
-}
-
-li:last-child {
-    background-color: black;
-    color: white;
 }

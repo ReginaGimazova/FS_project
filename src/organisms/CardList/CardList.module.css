@@ -9,3 +9,9 @@ h3{
     font-weight: lighter;
     text-align: center;
 }
+
+@media all and (max-width: 640px){
+    .cardList{
+        width: 100%;
+    }
+}

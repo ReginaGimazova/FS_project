@@ -2,16 +2,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import qs from 'qs';
-import styles from './MarvelEventsPage.module.css';
 import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
 import MarvelEventGallery from '../../organisms/MarvelEventGallery';
 import CommonContent from '../../organisms/CommonContent';
 import PaginationComponent from '../../molecules/PaginationComponent';
-import PaginationLink from '../../atoms/PaginationLnk';
-import PaginationEllipsis from '../../atoms/PaginationEllipsis';
-import PaginationPrev from '../../atoms/PaginationPrev';
-import PaginationNext from '../../atoms/PaginationNext';
 
 class MarvelEventsPage extends Component {
   state = {
@@ -96,12 +91,9 @@ class MarvelEventsPage extends Component {
     return pageArray;
   }
 
-  // disable next and prev links
-
   render() {
     const lastPage = this.countOfPages();
     const currentPage = this.returnPage();
-    const pg = this.returnPageArr();
 
     const { data } = this.state;
     const { loading } = this.state;
@@ -124,21 +116,11 @@ class MarvelEventsPage extends Component {
           )}
 
           {!error && !loading && (
-            <PaginationComponent>
-              <PaginationPrev currentPage={currentPage} href={`${match.url}?page=${currentPage - 1}`} />
-              <PaginationLink href={`${match.url}?page=1`}>1</PaginationLink>
-              {this.returnPage() > 4 && (
-                <PaginationEllipsis />
-              )}
-              <ul className={styles.subPagination}>
-                {pg.map(page => <PaginationLink href={`${match.url}?page=${page}`}>{page}</PaginationLink>)}
-              </ul>
-              {this.returnPage() < (lastPage - 4) && (
-                <PaginationEllipsis />
-              )}
-              <PaginationLink href={`${match.url}?page=${lastPage}`}>{lastPage}</PaginationLink>
-              <PaginationNext currentPage={currentPage} href={`${match.url}?page=${currentPage + 1}`} />
-            </PaginationComponent>
+            <PaginationComponent
+              total={lastPage}
+              location={match.url}
+              currentPage={currentPage}
+            />
 
           )}
         </CommonContent>

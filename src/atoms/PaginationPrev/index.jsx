@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CommonLink from '../CommonLink';
 
-const PaginationPrev = ({ href }) => (
-  <CommonLink href={href}>
-    previous
-  </CommonLink>
+const PaginationPrev = ({ to }) => (
+  <div>
+    <CommonLink href={to} className="blackLink">
+      previous
+    </CommonLink>
+  </div>
 );
 PaginationPrev.propTypes = {
-  href: PropTypes.string,
+  to: PropTypes.string,
 };
 PaginationPrev.defaultProps = {
-  href: '',
+  to: '',
 };
 export default PaginationPrev;

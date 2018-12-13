@@ -20,10 +20,9 @@ h4{
     justify-content: space-between;
 }
 
-.btn{
-    max-height: 30px;
-    background-color: black;
-    color: white;
-    border-color: black;
-    margin-top: 20px;
+@media all and (max-width: 424px) {
+    .head{
+        flex-direction: column;
+        align-items: center;
+    }
 }

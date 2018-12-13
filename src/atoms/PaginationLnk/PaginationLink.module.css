@@ -1,3 +1,10 @@
 .pageLink{
     cursor: pointer;
+    padding: 5px 10px;
+}
+
+@media all and (max-width: 425px){
+    .pageLink{
+        padding: 3px;
+    }
 }
