@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MarvCard from '../../molecules/MarvCard';
-import styles from './MarvelEventGallery.module.css';
+import styles from './MarvelStoriesGallery.module.css';
 
 const MarvelStoriesGallery = ({ children }) => (
   <div className={styles.mrvGallery}>

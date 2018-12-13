@@ -9,7 +9,6 @@ const MarvelMainPage = () => (
       <CommonLink href="/marvel/characters" className="blackLink">Marvel characters</CommonLink>
       <CommonLink href="/marvel/creators" className="blackLink">Marvel creators</CommonLink>
       <CommonLink href="/marvel/stories" className="blackLink">Marvel stories</CommonLink>
-      <CommonLink href="/marvel/comics" className="blackLink">Marvel comics</CommonLink>
       <CommonLink href="/marvel/events" className="blackLink">Marvel events</CommonLink>
     </CommonContent>
   </MainTemplate>

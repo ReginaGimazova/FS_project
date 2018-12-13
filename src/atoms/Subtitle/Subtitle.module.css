@@ -3,3 +3,11 @@
     font-family: "Arial Black", monospace;
     text-transform: lowercase;
 }
+
+@media all and (max-width: 640px){
+    .marvSub{
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+    }
+}

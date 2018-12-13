@@ -9,7 +9,7 @@ const MarvCard = ({
   name, id, url,
 }) => (
   <div key={id} className={styles.marvelCard}>
-    <Subtitle>Name of story</Subtitle>
+    <Subtitle className="marvSub">Name of story</Subtitle>
     <CommonLink
       href={url}
       className="blackLink"
