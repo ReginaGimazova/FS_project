@@ -7,3 +7,9 @@
     height: 250px;
     width: 350px;
 }
+
+@media all and (max-width: 640px){
+    .marvelCard{
+        width: 100%;
+    }
+}
