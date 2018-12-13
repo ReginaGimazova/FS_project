@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key,react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import qs from 'qs';
 import PaginationEllipsis from '../../atoms/PaginationEllipsis';
 import styles from './PaginationComponent.module.css';
 import PaginationLink from '../../atoms/PaginationLnk';

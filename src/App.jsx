@@ -14,6 +14,7 @@ import MarvelCharacterPage from './pages/MarvelCharacterPage';
 import MarvelEventsPage from './pages/MarvelEventsPage';
 import MarvelEventPage from './pages/MarvelEventPage';
 import MarvelCreatorPage from './pages/MarvelCreatorPage';
+import MarvelStoriesPage from './pages/MarvelStoriesPage';
 
 const App = () => (
   <BrowserRouter basename="/FS_project/">
@@ -30,6 +31,7 @@ const App = () => (
       <Route path="/marvel/events/:id" component={MarvelEventPage} exact />
       <Route path="/marvel/characters/:id" component={MarvelCharacterPage} exact />
       <Route path="/marvel/creators/:id" component={MarvelCreatorPage} exact />
+      <Route path="/marvel/stories" component={MarvelStoriesPage} exact />
       <Route path="/authentication" component={LoginPage} />
       <Route component={ErrorPage} exact />
     </Switch>
