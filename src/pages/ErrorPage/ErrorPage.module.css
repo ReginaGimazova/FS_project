@@ -14,3 +14,13 @@
     font-size: 2em;
     font-weight: lighter;
 }
+
+@media all and (max-width: 640px){
+    .errorSection > h1{
+        font-size: 3em;
+    }
+
+    .errorSection > h2{
+        font-size: 1.5em;
+    }
+}

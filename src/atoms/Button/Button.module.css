@@ -8,3 +8,13 @@
     font-family: "Arial", monospace;
     font-size: 14px;
 }
+
+.cardButton{
+    margin-top: 20px;
+}
+
+@media all and (max-width: 424px){
+    .cardButton{
+        width: 100%;
+    }
+}
