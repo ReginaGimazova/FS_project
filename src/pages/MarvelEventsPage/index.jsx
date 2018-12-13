@@ -5,7 +5,7 @@ import qs from 'qs';
 import styles from './MarvelEventsPage.module.css';
 import Title from '../../atoms/Title';
 import MainTemplate from '../../templates/MainTemplate';
-import MarvelGallery from '../../organisms/MarvelGallery';
+import MarvelEventGallery from '../../organisms/MarvelEventGallery';
 import CommonContent from '../../organisms/CommonContent';
 import PaginationComponent from '../../molecules/PaginationComponent';
 import PaginationLink from '../../atoms/PaginationLnk';
@@ -111,9 +111,9 @@ class MarvelEventsPage extends Component {
       <MainTemplate>
         <CommonContent>
           <Title>Marvel events</Title>
-          <MarvelGallery>
+          <MarvelEventGallery>
             {data}
-          </MarvelGallery>
+          </MarvelEventGallery>
           {loading && 'Loading...'}
           {!loading && !error && data.length === 0 && 'Empty'}
           {error && (

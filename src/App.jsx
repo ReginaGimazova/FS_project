@@ -12,6 +12,7 @@ import RegistrationPage from './pages/RegistrationPage';
 import MarvelCreatorsPage from './pages/MarvelCreatorsPage';
 import MarvelCharacterPage from './pages/MarvelCharacterPage';
 import MarvelEventsPage from './pages/MarvelEventsPage';
+import MarvelEventPage from './pages/MarvelEventPage';
 import MarvelCreatorPage from './pages/MarvelCreatorPage';
 
 const App = () => (
@@ -25,7 +26,8 @@ const App = () => (
       <Route path="/marvel" component={MarvelMainPage} exact />
       <Route path="/marvel/characters" component={MarvelPage} exact />
       <Route path="/marvel/creators" component={MarvelCreatorsPage} exact />
-      <Route path="/marvel/events" component={MarvelEventsPage} />
+      <Route path="/marvel/events" component={MarvelEventsPage} exact />
+      <Route path="/marvel/events/:id" component={MarvelEventPage} exact />
       <Route path="/marvel/characters/:id" component={MarvelCharacterPage} exact />
       <Route path="/marvel/creators/:id" component={MarvelCreatorPage} exact />
       <Route path="/authentication" component={LoginPage} />
