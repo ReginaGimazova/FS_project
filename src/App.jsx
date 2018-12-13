@@ -16,7 +16,7 @@ import MarvelEventPage from './pages/MarvelEventPage';
 import MarvelCreatorPage from './pages/MarvelCreatorPage';
 
 const App = () => (
-  <BrowserRouter basename="/FS_project">
+  <BrowserRouter basename="/FS_project/">
     <Switch>
       <Route path="/" component={HomePage} exact />
       <Route path="/news" component={NewsPage} exact />
